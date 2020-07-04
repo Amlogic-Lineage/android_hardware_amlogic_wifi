@@ -117,3 +117,8 @@ multiwifi:
 #	$(MAKE) -C $(shell pwd)/$(PRODUCT_OUT)/obj/KERNEL_OBJ M=$(shell pwd)/hardware/wifi/atbm/atbm602x ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules
 #	cp $(shell pwd)/hardware/wifi/atbm/atbm602x/hal_apollo/atbm602x_usb.ko $(TARGET_OUT)/
 #	$(CROSS_COMPILE)strip --strip-debug $(TARGET_OUT)/atbm602x_usb.ko
+
+qca9377:
+	@echo "making qca9377 wifi driver"
+	$(MAKE) -C $(shell pwd)/hardware/wifi/qualcomm/drivers/qca9377/AIO/build drivers BOARD_TYPE=te-p233 IF_TYPE=SDIO KERNELARCH=$(KERNEL_ARCH) KERNELPATH=$(shell pwd)/$(PRODUCT_OUT)/obj/KERNEL_OBJ
+	cp $(shell pwd)/hardware/wifi/qualcomm/drivers/qca9377/AIO/rootfs-x86-android.build/lib/modules/wlan.ko $(TARGET_OUT)/wlan_9377.ko
