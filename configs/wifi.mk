@@ -56,6 +56,7 @@ endif
 ################################################################################## enable clang CFI for arm64
 ifeq ($(ANDROID_BUILD_TYPE), 64)
 PRODUCT_CFI_INCLUDE_PATHS += hardware/amlogic/wifi/bcm_ampak/wpa_supplicant_8_lib
+PRODUCT_CFI_INCLUDE_PATHS += hardware/amlogic/wifi/qcom/wpa_supplicant_8_lib
 PRODUCT_CFI_INCLUDE_PATHS += hardware/amlogic/wifi/wifi_hal/wpa_supplicant_8_lib
 endif
 ##################################################################################
